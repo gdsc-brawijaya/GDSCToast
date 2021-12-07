@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/toast_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="24dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:id="@+id/toast_identifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_success"
+        app:layout_constraintStart_toStartOf="@id/iv_gdsc_logo_upside"
+        app:layout_constraintEnd_toEndOf="@id/iv_gdsc_logo_upside"
+        app:layout_constraintTop_toTopOf="@id/iv_gdsc_logo_upside">
+
+        <ImageView
+            android:id="@+id/iv_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_success"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="16dp"
+            android:text="Heloo this is success condition"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_condition"
+            app:layout_constraintStart_toEndOf="@id/iv_condition"
+            app:layout_constraintTop_toTopOf="@id/iv_condition"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_gdsc_logo_upside"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/gdsc_logo"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_gdsc_logo_downside"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/gdsc_logo"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/toast_identifier"
+        app:layout_constraintStart_toStartOf="@id/toast_identifier"
+        app:layout_constraintEnd_toEndOf="@id/toast_identifier"
+        app:layout_constraintBottom_toBottomOf="@id/toast_identifier"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
