@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:padding="12dp"
         android:orientation="horizontal"
         android:background="@drawable/toast_success"
         app:layout_constraintStart_toStartOf="@id/iv_gdsc_logo_upside"
@@ -21,10 +22,9 @@
 
         <ImageView
             android:id="@+id/iv_condition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_success"
-            android:padding="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -35,13 +35,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:padding="16dp"
             android:text="Heloo this is success condition"
             android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/iv_condition"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_condition"
-            app:layout_constraintTop_toTopOf="@id/iv_condition"/>
+            app:layout_constraintTop_toTopOf="parent"/>
     </LinearLayout>
 
     <ImageView

@@ -17,12 +17,13 @@ class GDSCToast(private val context: Context): Toast(context) {
             layout.apply {
                 toastIdentifier.setBackgroundResource(R.drawable.toast_normal)
                 if (showLogo)
-                    ivGdscLogoDownside.visibility = View.VISIBLE
+                    ivGdscLogoUpside.visibility = View.VISIBLE
                 else
-                    ivGdscLogoDownside.visibility = View.INVISIBLE
+                    ivGdscLogoUpside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                ivCondition.visibility = View.VISIBLE
+                tvInformation.setTextColor(context.resources.getColor(R.color.black))
+                ivCondition.visibility = View.GONE
             }
 
             toast.duration = duration
