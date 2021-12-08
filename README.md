@@ -6,7 +6,7 @@ Custom Toast Library by Google Developer Student Club University of Brawijaya
 
 ## Prerequisites
 
-- For gradle version below 7
+- For old version of gradle (before arctic fox update)
 
   Add this in your root `build.gradle` file (project scope)
 
