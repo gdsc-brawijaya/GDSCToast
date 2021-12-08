@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GDSCToast.iml" filepath="$PROJECT_DIR$/.idea/modules/GDSCToast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GDSCToast.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GDSCToast.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gdsctoast/GDSCToast.gdsctoast.iml" filepath="$PROJECT_DIR$/.idea/modules/gdsctoast/GDSCToast.gdsctoast.iml" />
+    </modules>
+  </component>
+</project>
