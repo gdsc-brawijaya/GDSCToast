@@ -7,6 +7,4 @@
         maven { url 'https://jitpack.io' }// Warning: this repository is going to shut down soon
     }
 }*/
-rootProject.name = "GDSCToast"
-include ':app'
-include ':gdsctoast'
+include ':app', ':gdsctoast'
