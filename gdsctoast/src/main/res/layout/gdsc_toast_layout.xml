@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        android:background="@drawable/shape_success"
+        android:background="@drawable/toast_success"
         app:layout_constraintStart_toStartOf="@id/iv_gdsc_logo_upside"
         app:layout_constraintEnd_toEndOf="@id/iv_gdsc_logo_upside"
         app:layout_constraintTop_toTopOf="@id/iv_gdsc_logo_upside">
