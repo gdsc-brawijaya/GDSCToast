@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/app/src/main/res/layout/activity_main.xml" value="0.2640625" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/ic_error.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/ic_info.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/ic_warning.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_error.xml" value="0.2942708333333333" />
@@ -12,7 +13,8 @@
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_success.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_warning.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_normal.xml" value="0.2942708333333333" />
-        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/layout/gdsc_toast_layout.xml" value="0.22" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_success.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/layout/gdsc_toast_layout.xml" value="0.75" />
       </map>
     </option>
   </component>

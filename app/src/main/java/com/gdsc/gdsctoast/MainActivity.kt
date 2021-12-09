@@ -16,19 +16,19 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             btnSuccess.setOnClickListener {
-                GDSCToast.showSuccessText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
+                GDSCToast.makeSuccessToast(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
             }
             btnNormal.setOnClickListener {
-                GDSCToast.showNormalText(this@MainActivity, "Normal", Toast.LENGTH_LONG).show()
+                GDSCToast.makeNormalToast(this@MainActivity, "Normal", Toast.LENGTH_LONG).show()
             }
             btnError.setOnClickListener {
-                GDSCToast.showErrorText(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
+                GDSCToast.makeErrorToast(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
             }
             btnWarning.setOnClickListener {
-                GDSCToast.showWarningText(this@MainActivity, "Warning", Toast.LENGTH_LONG).show()
+                GDSCToast.makeWarningToast(this@MainActivity, "Warning", Toast.LENGTH_LONG).show()
             }
             btnInfo.setOnClickListener {
-                GDSCToast.showInfoText(this@MainActivity, "Info", Toast.LENGTH_LONG).show()
+                GDSCToast.makeInfoToast(this@MainActivity, "Info", Toast.LENGTH_LONG).show()
             }
         }
     }
