@@ -5,7 +5,8 @@
     <color name="green">#FF109D58</color>
     <color name="blue">#FF4286F5</color>
     <color name="yellow">#FFF9BB04</color>
-    <color name="white">#FFFFFF</color>
+    <color name="gray">#FFc0c0c0</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
 
 </resources>

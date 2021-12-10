@@ -12,8 +12,11 @@
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_normal.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_success.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/shape_warning.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_error.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_info.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_normal.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_success.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/drawable/toast_warning.xml" value="0.2942708333333333" />
         <entry key="..\:/Users/SHIELD/AndroidStudioProjects/GDSCToast/gdsctoast/src/main/res/layout/gdsc_toast_layout.xml" value="0.75" />
       </map>
     </option>

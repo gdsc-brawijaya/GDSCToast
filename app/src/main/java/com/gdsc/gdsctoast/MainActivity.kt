@@ -15,20 +15,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-            btnSuccess.setOnClickListener {
-                GDSCToast.makeSuccessToast(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
-            }
             btnNormal.setOnClickListener {
-                GDSCToast.makeNormalToast(this@MainActivity, "Normal", Toast.LENGTH_LONG).show()
+                GDSCToast.makeNormalToast(this@MainActivity, "This is a normal toast", Toast.LENGTH_LONG).show()
+                GDSCToast.showNormalToast(this@MainActivity, "This is a normal toast", Toast.LENGTH_LONG)
+            }
+            btnSuccess.setOnClickListener {
+                GDSCToast.makeSuccessToast(this@MainActivity, "This is a success toast", Toast.LENGTH_LONG).show()
+                GDSCToast.showSuccessToast(this@MainActivity, "This is a success toast", Toast.LENGTH_LONG)
             }
             btnError.setOnClickListener {
-                GDSCToast.makeErrorToast(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
+                GDSCToast.makeErrorToast(this@MainActivity, "This is an error toast", Toast.LENGTH_LONG).show()
+                GDSCToast.showErrorToast(this@MainActivity, "This is an error toast", Toast.LENGTH_LONG)
             }
             btnWarning.setOnClickListener {
-                GDSCToast.makeWarningToast(this@MainActivity, "Warning", Toast.LENGTH_LONG).show()
+                GDSCToast.makeWarningToast(this@MainActivity, "This is a warning toast", Toast.LENGTH_LONG).show()
+                GDSCToast.showWarningToast(this@MainActivity, "This is a warning toast", Toast.LENGTH_LONG)
             }
             btnInfo.setOnClickListener {
-                GDSCToast.makeInfoToast(this@MainActivity, "Info", Toast.LENGTH_LONG).show()
+                GDSCToast.makeInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG).show()
+                GDSCToast.showInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG)
             }
         }
     }

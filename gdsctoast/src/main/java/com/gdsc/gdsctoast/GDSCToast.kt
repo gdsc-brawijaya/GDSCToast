@@ -44,7 +44,6 @@ class GDSCToast(private val context: Context): Toast(context) {
                     ivGdscLogoUpside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                tvInformation.setTextColor(context.resources.getColor(R.color.black))
                 ivCondition.visibility = View.GONE
             }
 
@@ -162,7 +161,7 @@ class GDSCToast(private val context: Context): Toast(context) {
          * @param showLogo(optional) to show/hide logo of Google Developer Student Club
          */
         fun showErrorToast(context: Context, text: String, duration: Int, showLogo: Boolean = true) =
-            makeErrorToast(context, text, duration, showLogo)
+            makeErrorToast(context, text, duration, showLogo).show()
 
         /**
          * Call this function to make a warning toast (you can check the pict of warning toast on github Readme.md)
