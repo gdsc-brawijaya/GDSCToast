@@ -87,7 +87,7 @@ GDSCToast.showInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH
 ## Preview
 
 <div align="center">
-<img width="100%" height = "100%" src="https://user-images.githubusercontent.com/58837451/145605982-a3a86a62-b720-4b5e-911f-54c311e3f9f6.png" />
+<img width="100%" height = "100%" src="https://user-images.githubusercontent.com/58837451/146627030-c249eb22-d5b2-4b67-816c-80f4381456c7.png" />
 </div>
 
 
