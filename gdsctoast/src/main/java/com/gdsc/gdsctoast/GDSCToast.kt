@@ -4,27 +4,35 @@ package com.gdsc.gdsctoast
  * GDSCToast
  * Copyright (c) 2021 all rights reserved.
  * Created by Kylix Eza Saputra as Learning Development Android Google Developer Student Club University of Brawijaya
- * Contact me if you find any bugs or just want to collaborate in this project*/
+ * Contact me if you find any bugs or just want to collaborate in this project
+ */
 
 import android.content.Context
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.gdsc.gdsctoast.databinding.GdscToastLayoutBinding
+import com.gdsc.gdsctoast.util.GDSCToastConfig
 
 /**
  * Class that contains some toast functions
  */
-class GDSCToast(private val context: Context): Toast(context) {
-
+class GDSCToast {
     companion object {
 
+        private val Int.dp: Int
+            get() = (this * Resources.getSystem().displayMetrics.density).toInt()
+
         /**
-         * Call this function to make a normal toast (you can check the pict of normal toast on github Readme.md)
-         * Example:
+         * * Call this function to make a normal toast (you can check the pict of normal toast on github Readme.md)
+         * * Example:
          * GDSCToast.makeNormalToast(context, "Hello this is normal toast", Toast.LENGTH_SHORT, true).show()
-         * Or you can make an object of the toast so you can customize your own toast
-         * Example:
+         * * Or you can make an object of the toast so you can customize your own toast
+         * * Example:
          * val normalToast = GDSCToast.makeNormalToast(context, "Hello this is normal toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -32,12 +40,26 @@ class GDSCToast(private val context: Context): Toast(context) {
          * @param duration to control duration of your toast (LENGTH_LONG or LENGTH_SHORT)
          * @param showLogo(optional) to show/hide logo of Google Developer Student Club
          */
+
         fun makeNormalToast(context: Context, text: String, duration: Int, showLogo: Boolean = true): Toast {
             val toast = Toast(context)
             val layout = buildToast(context)
 
             layout.apply {
-                toastIdentifier.setBackgroundResource(R.drawable.toast_normal)
+                toastIdentifier.apply {
+                    background = ResourcesCompat.getDrawable(context.resources, R.drawable.rounded_shape, null)
+                    background.setTint(ContextCompat.getColor(context, R.color.gray))
+                }
+
+                val params = tvInformation.layoutParams as ViewGroup.MarginLayoutParams
+                params.apply {
+                    marginStart = 12.dp
+                    topMargin = 8.dp
+                    bottomMargin = 8.dp
+                    marginEnd = 12.dp
+                }
+                tvInformation.layoutParams = params
+
                 if (showLogo)
                     ivGdscLogoUpside.visibility = View.VISIBLE
                 else
@@ -53,8 +75,8 @@ class GDSCToast(private val context: Context): Toast(context) {
         }
 
         /**
-         * Shortcut if you just want to show the toast without any customization
-         * Example:
+         * * Shortcut if you just want to show the toast without any customization
+         * * Example:
          * GDSCToast.showNormalToast(context, "Hello this is normal toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -66,11 +88,11 @@ class GDSCToast(private val context: Context): Toast(context) {
             makeNormalToast(context, text, duration, showLogo).show()
 
         /**
-         * Call this function to make a success toast (you can check the pict of success toast on github Readme.md)
-         * Example:
+         * * Call this function to make a success toast (you can check the pict of success toast on github Readme.md)
+         * * Example:
          * GDSCToast.makeSuccessToast(context, "Hello this is success toast", Toast.LENGTH_SHORT, true).show()
-         * Or you can make an object of the toast so you can customize your own toast
-         * Example:
+         * * Or you can make an object of the toast so you can customize your own toast
+         * * Example:
          * val successToast = GDSCToast.makeSuccessToast(context, "Hello this is success toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -83,17 +105,17 @@ class GDSCToast(private val context: Context): Toast(context) {
             val layout = buildToast(context)
 
             layout.apply {
-                toastIdentifier.setBackgroundResource(R.drawable.toast_success)
+                toastIdentifier.apply {
+                    background = ResourcesCompat.getDrawable(context.resources, R.drawable.rounded_shape, null)
+                    background.setTint(ContextCompat.getColor(context, R.color.green))
+                }
                 if (showLogo)
                     ivGdscLogoUpside.visibility = View.VISIBLE
                 else
                     ivGdscLogoUpside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                ivCondition.apply {
-                    setImageResource(R.drawable.ic_success)
-                    visibility = View.VISIBLE
-                }
+                ivCondition.setImageResource(R.drawable.ic_success)
             }
 
             toast.duration = duration
@@ -102,8 +124,8 @@ class GDSCToast(private val context: Context): Toast(context) {
         }
 
         /**
-         * Shortcut if you just want to show the toast without any customization
-         * Example:
+         * * Shortcut if you just want to show the toast without any customization
+         * * Example:
          * GDSCToast.showSuccessToast(context, "Hello this is success toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -115,11 +137,11 @@ class GDSCToast(private val context: Context): Toast(context) {
             makeSuccessToast(context, text, duration, showLogo).show()
 
         /**
-         * Call this function to make a error toast (you can check the pict of error toast on github Readme.md)
-         * Example:
+         * * Call this function to make a error toast (you can check the pict of error toast on github Readme.md)
+         * * Example:
          * GDSCToast.makeErrorToast(context, "Hello this is error toast", Toast.LENGTH_SHORT, true).show()
-         * Or you can make an object of the toast so you can customize your own toast
-         * Example:
+         * * Or you can make an object of the toast so you can customize your own toast
+         * * Example:
          * val errorToast = GDSCToast.makeErrorToast(context, "Hello this is error toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -132,17 +154,17 @@ class GDSCToast(private val context: Context): Toast(context) {
             val layout = buildToast(context)
 
             layout.apply {
-                toastIdentifier.setBackgroundResource(R.drawable.toast_error)
+                toastIdentifier.apply {
+                    background = ResourcesCompat.getDrawable(context.resources, R.drawable.rounded_shape, null)
+                    background.setTint(ContextCompat.getColor(context, R.color.red))
+                }
                 if (showLogo)
                     ivGdscLogoUpside.visibility = View.VISIBLE
                 else
                     ivGdscLogoUpside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                ivCondition.apply {
-                    setImageResource(R.drawable.ic_error)
-                    visibility = View.VISIBLE
-                }
+                ivCondition.setImageResource(R.drawable.ic_error)
             }
 
             toast.duration = duration
@@ -151,8 +173,8 @@ class GDSCToast(private val context: Context): Toast(context) {
         }
 
         /**
-         * Shortcut if you just want to show the toast without any customization
-         * Example:
+         * * Shortcut if you just want to show the toast without any customization
+         * * Example:
          * GDSCToast.showErrorToast(context, "Hello this is error toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -164,11 +186,11 @@ class GDSCToast(private val context: Context): Toast(context) {
             makeErrorToast(context, text, duration, showLogo).show()
 
         /**
-         * Call this function to make a warning toast (you can check the pict of warning toast on github Readme.md)
-         * Example:
+         * * Call this function to make a warning toast (you can check the pict of warning toast on github Readme.md)
+         * * Example:
          * GDSCToast.makeWarningToast(context, "Hello this is warning toast", Toast.LENGTH_SHORT, true).show()
-         * Or you can make an object of the toast so you can customize your own toast
-         * Example:
+         * * Or you can make an object of the toast so you can customize your own toast
+         * * Example:
          * val warningToast = GDSCToast.makeWarningToast(context, "Hello this is warning toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -181,17 +203,17 @@ class GDSCToast(private val context: Context): Toast(context) {
             val layout = buildToast(context)
 
             layout.apply {
-                toastIdentifier.setBackgroundResource(R.drawable.toast_warning)
+                toastIdentifier.apply {
+                    background = ResourcesCompat.getDrawable(context.resources, R.drawable.rounded_shape, null)
+                    background.setTint(ContextCompat.getColor(context, R.color.yellow))
+                }
                 if (showLogo)
                     ivGdscLogoDownside.visibility = View.VISIBLE
                 else
                     ivGdscLogoDownside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                ivCondition.apply {
-                    setImageResource(R.drawable.ic_warning)
-                    visibility = View.VISIBLE
-                }
+                ivCondition.setImageResource(R.drawable.ic_warning)
             }
 
             toast.duration = duration
@@ -200,8 +222,8 @@ class GDSCToast(private val context: Context): Toast(context) {
         }
 
         /**
-         * Shortcut if you just want to show the toast without any customization
-         * Example:
+         * * Shortcut if you just want to show the toast without any customization
+         * * Example:
          * GDSCToast.showWarningToast(context, "Hello this is warning toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -213,11 +235,11 @@ class GDSCToast(private val context: Context): Toast(context) {
             makeWarningToast(context, text, duration, showLogo).show()
 
         /**
-         * Call this function to make a info toast (you can check the pict of info toast on github Readme.md)
-         * Example:
+         * * Call this function to make a info toast (you can check the pict of info toast on github Readme.md)
+         * * Example:
          * GDSCToast.makeInfoToast(context, "Hello this is info toast", Toast.LENGTH_SHORT, true).show()
-         * Or you can make an object of the toast so you can customize your own toast
-         * Example:
+         * * Or you can make an object of the toast so you can customize your own toast
+         * * Example:
          * val infoToast = GDSCToast.makeInfoToast(context, "Hello this is info toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -230,17 +252,17 @@ class GDSCToast(private val context: Context): Toast(context) {
             val layout = buildToast(context)
 
             layout.apply {
-                toastIdentifier.setBackgroundResource(R.drawable.toast_info)
+                toastIdentifier.apply {
+                    background = ResourcesCompat.getDrawable(context.resources, R.drawable.rounded_shape, null)
+                    background.setTint(ContextCompat.getColor(context, R.color.blue))
+                }
                 if (showLogo)
                     ivGdscLogoDownside.visibility = View.VISIBLE
                 else
                     ivGdscLogoDownside.visibility = View.INVISIBLE
 
                 tvInformation.text = text
-                ivCondition.apply {
-                    setImageResource(R.drawable.ic_info)
-                    visibility = View.VISIBLE
-                }
+                ivCondition.setImageResource(R.drawable.ic_info)
             }
 
             toast.duration = duration
@@ -249,8 +271,8 @@ class GDSCToast(private val context: Context): Toast(context) {
         }
 
         /**
-         * Shortcut if you just want to show the toast without any customization
-         * Example:
+         * * Shortcut if you just want to show the toast without any customization
+         * * Example:
          * GDSCToast.showInfoToast(context, "Hello this is info toast", Toast.LENGTH_SHORT, true)
          *
          * @param context to get context from activity or fragment
@@ -261,6 +283,19 @@ class GDSCToast(private val context: Context): Toast(context) {
         fun showInfoToast(context: Context, text: String, duration: Int, showLogo: Boolean = true) =
             makeInfoToast(context, text, duration, showLogo).show()
 
+        /**
+         * * Available since version 1.2.0
+         * * Allow you to access configuration of GDSCToast
+         * * Example:
+         * GDSCToast.configOn(this)
+         *
+         * @param context to get context from activity or fragment
+         */
+        fun configOn(context: Context): GDSCToastConfig {
+            val config = GDSCToastConfig()
+            config.context = context
+            return config
+        }
 
         private fun buildToast(context: Context): GdscToastLayoutBinding =
             GdscToastLayoutBinding.inflate(LayoutInflater.from(context), null, false)

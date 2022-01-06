@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/toast_container"
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/toast_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="24dp"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:id="@+id/toast_identifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:padding="12dp"
         android:orientation="horizontal"
-        android:background="@drawable/toast_success"
         app:layout_constraintStart_toStartOf="@id/iv_gdsc_logo_upside"
         app:layout_constraintEnd_toEndOf="@id/iv_gdsc_logo_upside"
-        app:layout_constraintTop_toTopOf="@id/iv_gdsc_logo_upside">
+        app:layout_constraintTop_toTopOf="@id/iv_gdsc_logo_upside"
+        tools:background="@drawable/rounded_shape"
+        tools:backgroundTint="@color/green">
 
         <ImageView
             android:id="@+id/iv_condition"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="8dp"
             android:src="@drawable/ic_success"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginEnd="12dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Heloo this is success condition"
             android:textColor="@color/white"
@@ -59,6 +64,7 @@
         android:layout_height="32dp"
         android:src="@drawable/gdsc_logo"
         android:visibility="invisible"
+        android:translationZ="2dp"
         app:layout_constraintTop_toBottomOf="@id/toast_identifier"
         app:layout_constraintStart_toStartOf="@id/toast_identifier"
         app:layout_constraintEnd_toEndOf="@id/toast_identifier"

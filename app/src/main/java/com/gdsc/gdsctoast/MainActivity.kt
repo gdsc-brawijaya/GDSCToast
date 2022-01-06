@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.gdsc.gdsctoast.databinding.ActivityMainBinding
+import com.gdsc.gdsctoast.util.ToastShape
+import com.gdsc.gdsctoast.util.ToastType
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +36,15 @@ class MainActivity : AppCompatActivity() {
             btnInfo.setOnClickListener {
                 GDSCToast.makeInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG).show()
                 GDSCToast.showInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG)
+            }
+            btnConfig.setOnClickListener {
+                GDSCToast.configOn(this@MainActivity)
+                    .setText("Hello this is from 1.2.0 ver")
+                    .setDuration(Toast.LENGTH_LONG)
+                    .setShowLogo(true)
+                    .setToastShape(ToastShape.RECTANGLE)
+                    .setToastType(ToastType.SUCCESS)
+                    .showToast()
             }
         }
     }
