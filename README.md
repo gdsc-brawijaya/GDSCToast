@@ -100,11 +100,11 @@ GDSCToast.configOn(this@MainActivity)
 ```kotlin
 GDSCToast.showAnyToast(this@MainActivity) {
     it.apply {
-	text = "Hello this is from 1.2.1 ver"
+	text = "Write your message here"
 	duration = Toast.LENGTH_LONG
 	showLogo = false
+	toastType = ToastType.WARNING
 	toastShape = ToastShape.RECTANGLE
-	toastType = ToastType.ERROR
     }
 }
 ```
