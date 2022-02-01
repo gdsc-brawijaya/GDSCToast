@@ -1,4 +1,4 @@
-package com.gdsc.gdsctoast.util
+package com.gdsc.gdsctoast.config
 
 import android.content.Context
 import android.content.res.Resources
@@ -10,19 +10,20 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.gdsc.gdsctoast.R
 import com.gdsc.gdsctoast.databinding.GdscToastLayoutBinding
+import com.gdsc.gdsctoast.util.ToastShape
+import com.gdsc.gdsctoast.util.ToastType
 
 /**
  * Available since version 1.2.0
  * Configuration class for GDSCToast
  */
-class GDSCToastConfig {
+class GDSCToastConfig(private val context: Context) {
 
-    lateinit var context: Context
-    private var text: String = ""
-    private var toastType: ToastType = ToastType.NORMAL
-    private var showLogo: Boolean = true
-    private var duration: Int = Toast.LENGTH_SHORT
-    private var toastShape: ToastShape = ToastShape.ROUNDED
+    var text: String = ""
+    var toastType: ToastType = ToastType.INFO
+    var showLogo: Boolean = true
+    var duration: Int = Toast.LENGTH_SHORT
+    var toastShape: ToastShape = ToastShape.ROUNDED
 
     private val Int.dp: Int
         get() = (this * Resources.getSystem().displayMetrics.density).toInt()

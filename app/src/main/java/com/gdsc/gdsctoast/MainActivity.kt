@@ -46,6 +46,17 @@ class MainActivity : AppCompatActivity() {
                     .setToastType(ToastType.SUCCESS)
                     .showToast()
             }
+            btnConfig2.setOnClickListener {
+                GDSCToast.showAnyToast(this@MainActivity) {
+                    it.apply {
+                        text = "Hello this is from 1.2.1 ver"
+                        duration = Toast.LENGTH_LONG
+                        showLogo = false
+                        toastShape = ToastShape.RECTANGLE
+                        toastType = ToastType.ERROR
+                    }
+                }
+            }
         }
     }
 }

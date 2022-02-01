@@ -16,7 +16,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.gdsc.gdsctoast.databinding.GdscToastLayoutBinding
-import com.gdsc.gdsctoast.util.GDSCToastConfig
+import com.gdsc.gdsctoast.config.GDSCToastConfig
 
 /**
  * Class that contains some toast functions
@@ -292,9 +292,30 @@ class GDSCToast {
          * @param context to get context from activity or fragment
          */
         fun configOn(context: Context): GDSCToastConfig {
-            val config = GDSCToastConfig()
-            config.context = context
-            return config
+            return GDSCToastConfig(context)
+        }
+
+        /**
+         * * Available since version 1.2.1
+         * * Allow you to use lambda expression to set up any properties that you need
+         * * Example:
+         * GDSCToast.showAnyToast(this@MainActivity) {
+               it.apply {
+                    text = "Hello this is from 1.2.1 ver"
+                    duration = Toast.LENGTH_LONG
+                    showLogo = false
+                    toastShape = ToastShape.RECTANGLE
+                    toastType = ToastType.ERROR
+               }
+         }
+         *
+         * @param context to get context from activity or fragment
+         * @param block to configure some properties in configuration
+         */
+        inline fun showAnyToast(context: Context, block: (GDSCToastConfig) -> Unit) {
+            val config = configOn(context)
+            block(config)
+            config.showToast()
         }
 
         private fun buildToast(context: Context): GdscToastLayoutBinding =
