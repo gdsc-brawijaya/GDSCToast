@@ -85,7 +85,7 @@ GDSCToast.makeInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH
 GDSCToast.showInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG, true)
 ```
 
-- To configure any toast
+- To configure any toast (1.2.0)
 ``` kotlin
 GDSCToast.configOn(this@MainActivity)
     .setText("Write your message here")
@@ -94,6 +94,19 @@ GDSCToast.configOn(this@MainActivity)
     .setToastShape(ToastShape.RECTANGLE)
     .setToastType(ToastType.WARNING)
     .showToast()
+```
+
+- To configure any toast using lambda expression (1.2.1)
+```kotlin
+GDSCToast.showAnyToast(this@MainActivity) {
+    it.apply {
+	text = "Hello this is from 1.2.1 ver"
+	duration = Toast.LENGTH_LONG
+	showLogo = false
+	toastShape = ToastShape.RECTANGLE
+	toastType = ToastType.ERROR
+    }
+}
 ```
 
 | Method | Parameter | Usage | Attribute Default Value |
