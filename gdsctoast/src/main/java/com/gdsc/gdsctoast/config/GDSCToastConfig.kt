@@ -28,7 +28,7 @@ class GDSCToastConfig(private val context: Context) {
     private val Int.dp: Int
         get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 
-    private fun buildToast(): Toast {
+    private fun buildBaseToast(): Toast {
         val toast = Toast(context)
         val layout = GdscToastLayoutBinding.inflate(LayoutInflater.from(context), null, false)
 
@@ -166,9 +166,9 @@ class GDSCToastConfig(private val context: Context) {
      * GDSCToast.configOn(this)
      *     .setText("Internet connection interrupted")
      *     .setToastType(ToastType.ERROR)
-     *     .makeToast()
+     *     .buildToast()
      */
-    fun makeToast(): Toast = buildToast()
+    fun buildToast(): Toast = buildBaseToast()
 
     /**
      * * Available since version 1.2.0
@@ -180,5 +180,5 @@ class GDSCToastConfig(private val context: Context) {
      *     .setToastType(ToastType.ERROR)
      *     .show()
      */
-    fun showToast() = makeToast().show()
+    fun showToast() = buildToast().show()
 }
