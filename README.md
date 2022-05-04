@@ -50,38 +50,38 @@ you can check the version on jitpack badge above or on release tag
 
 ## Usage
 
-Each function start with 'make...' like ```makeNormalToast``` always returns a `Toast` object, so you can customize your own Toast. But if you just want to show the toast without any customization, you can use function that start with 'show...' like `showNormalToast`
+Each function start with 'build...' like ```buildNormalToast``` always returns a `Toast` object, so you can customize your own Toast. But if you just want to show the toast without any customization, you can use function that start with 'show...' like `showNormalToast`
 
 - To display a normal Toast:
 
 ```kotlin
-GDSCToast.makeNormalToast(this@MainActivity, "This is a normal toast", Toast.LENGTH_LONG, true).show()
+GDSCToast.buildNormalToast(this@MainActivity, "This is a normal toast", Toast.LENGTH_LONG, true).show()
 GDSCToast.showNormalToast(this@MainActivity, "This is a normal toast", Toast.LENGTH_LONG, true)
 ```
 
 - To display a success Toast:
 
 ``` kotlin
-GDSCToast.makeSuccessToast(this@MainActivity, "This is a success toast", Toast.LENGTH_LONG, true).show()
+GDSCToast.buildSuccessToast(this@MainActivity, "This is a success toast", Toast.LENGTH_LONG, true).show()
 GDSCToast.showSuccessToast(this@MainActivity, "This is a success toast", Toast.LENGTH_LONG, true)
 ```
 - To display an error Toast:
 
 ``` kotlin 
-GDSCToast.makeErrorToast(this@MainActivity, "This is an error toast", Toast.LENGTH_LONG, true).show()
+GDSCToast.buildErrorToast(this@MainActivity, "This is an error toast", Toast.LENGTH_LONG, true).show()
 GDSCToast.showErrorToast(this@MainActivity, "This is an error toast", Toast.LENGTH_LONG, true)
 ```
 
 - To display an warning Toast:
 
 ``` kotlin
-GDSCToast.makeWarningToast(this@MainActivity, "This is a warning toast", Toast.LENGTH_LONG, true).show()
+GDSCToast.buildWarningToast(this@MainActivity, "This is a warning toast", Toast.LENGTH_LONG, true).show()
 GDSCToast.showWarningToast(this@MainActivity, "This is a warning toast", Toast.LENGTH_LONG, true)
 ```
 - To display an info Toast:
 
 ``` kotlin
-GDSCToast.makeInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG, true).show()
+GDSCToast.buildInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG, true).show()
 GDSCToast.showInfoToast(this@MainActivity, "This is an info toast", Toast.LENGTH_LONG, true)
 ```
 
@@ -109,6 +109,27 @@ GDSCToast.showAnyToast(this@MainActivity) {
 }
 ```
 
+- To use context extension into all of functions that available in GDSCToast (1.2.2)
+#### The First Way -> simple but need to import the function that you called (automatically imported)
+```kotlin
+this@MainActivity.apply { buildNormalToast("This is normal toast", Toast.LENGTH_SHORT, true).show() }
+this@MainActivity.apply { showSuccessToast("This is success toast", Toast.LENGTH_SHORT, true) }
+
+this@MainActivity.apply { configOn().setText(...).setDuration(...).setShowLogo(...).setToastShape(...).setToastType(...).showToast() } 
+this@MainActivity.apply { showAnyToast { it.apply { text, duration, etc. } } 
+```
+  
+#### The Second Way -> little bit complicated but no need any import
+```kotlin
+GDSCToast.apply { this@MainActivity.buildNormalToast("This is normal toast", Toast.LENGTH_SHORT, true).show() }
+GDSCToast.apply { this@MainActivity.showSuccessToast("This is success toast", Toast.LENGTH_SHORT, true) }
+
+GDSCToast.apply { this@MainActivity.configOn().setText(...).setDuration(...).setShowLogo(...).setToastShape(...).setToastType(...).showToast() }
+GDSCToast.apply { this@MainActivity.showAnyToast { it.apply { text, duration, etc. } }
+```
+
+<br></br>
+
 | Method | Parameter | Usage | Attribute Default Value |
 | ------ | :---------: | ----- | :-------------------: | 
 | ``` configOn ``` | ```Context``` | Allow you to access configuration of GDSCToast | No default value because it's mandatory |
@@ -117,7 +138,7 @@ GDSCToast.showAnyToast(this@MainActivity) {
 | ```setShowLogo``` | ```Boolean``` | To set visibility of GDSC logo  | ```true``` |
 | ```setDuration``` | ```Int```| To set duration of toast | ```Toast.LENGTH_SHORT``` |
 | ```setToastShape``` | ```ToastShape``` | To set shape of toast | ```ToastShape.ROUNDED``` |
-| ```makeToast``` | - | To create the toast => returns toast object | - |
+| ```buildToast``` | - | To create the toast => returns toast object | - |
 | ```showToast``` | - | To show the toast | - |
 
 ## Preview
